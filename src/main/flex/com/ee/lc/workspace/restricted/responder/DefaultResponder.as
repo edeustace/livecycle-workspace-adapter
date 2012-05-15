@@ -1,4 +1,4 @@
-package com.rma.lc.workspace.restricted.responder
+package com.ee.lc.workspace.restricted.responder
 {
 	import mx.rpc.IResponder;
 

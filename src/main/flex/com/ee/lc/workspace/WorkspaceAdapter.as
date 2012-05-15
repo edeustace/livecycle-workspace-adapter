@@ -1,8 +1,8 @@
-package com.rma.lc.workspace {
-	import com.rma.lc.workspace.api.model.Task;
-	import com.rma.lc.workspace.restricted.WorkspaceServerLogin;
-	import com.rma.lc.workspace.restricted.WorkspaceUserManager;
-	import com.rma.lc.workspace.restricted.responder.DefaultResponder;
+package com.ee.lc.workspace {
+	import com.ee.lc.workspace.api.model.Task;
+	import com.ee.lc.workspace.restricted.WorkspaceServerLogin;
+	import com.ee.lc.workspace.restricted.WorkspaceUserManager;
+	import com.ee.lc.workspace.restricted.responder.DefaultResponder;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;

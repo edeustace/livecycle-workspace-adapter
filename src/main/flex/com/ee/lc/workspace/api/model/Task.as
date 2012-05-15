@@ -1,4 +1,4 @@
-package com.rma.lc.workspace.api.model
+package com.ee.lc.workspace.api.model
 {
 	import mx.collections.ArrayCollection;
 	import mx.collections.ListCollectionView;

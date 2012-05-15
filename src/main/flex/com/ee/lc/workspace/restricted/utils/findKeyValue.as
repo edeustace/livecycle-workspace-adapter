@@ -1,4 +1,4 @@
-package com.rma.lc.workspace.restricted.utils
+package com.ee.lc.workspace.restricted.utils
 {
 	/**
 	 * find value in keyvalue string: eg: 

@@ -1,6 +1,6 @@
-package com.rma.lc.workspace.restricted
+package com.ee.lc.workspace.restricted
 {
-	import com.rma.lc.workspace.restricted.utils.findKeyValue;
+	import com.ee.lc.workspace.restricted.utils.findKeyValue;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;

@@ -1,4 +1,4 @@
-package com.rma.lc.workspace.api.model
+package com.ee.lc.workspace.api.model
 {
 
 	[RemoteClass(alias="com.adobe.idp.taskmanager.dsc.client.task.TaskACLImpl")]
