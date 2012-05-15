@@ -10,6 +10,9 @@
         import mx.rpc.events.FaultEvent;
 
         [Bindable]
+        public var livecycleServerUrl : String;
+
+        [Bindable]
         private var username:String = "ed";
 
         [Bindable]
@@ -53,7 +56,7 @@
     <fx:Declarations>
         <workspace:WorkspaceAdapter
                 id="workspaceAdapter"
-                lcServerUrl="{'http://87.106.248.40:8080'}"/>
+                lcServerUrl="{livecycleServerUrl}"/>
     </fx:Declarations>
     <s:VGroup>
         <s:Label text="Login:"/>

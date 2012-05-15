@@ -1,3 +1,7 @@
-install via: > mvn clean install
+# livecycle-workspace-adapter
+This is a simple library that simplifies interfacing with an Adobe Livecycle Workspace Server.
 
-this will create the "target" folder containing the SWF to run.
+## Usage
+See the example mxml file.
+
+
