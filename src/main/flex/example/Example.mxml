@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:workspace="com.rma.lc.workspace.*"
+         minWidth="955" minHeight="600">
+    <fx:Script>
+			<![CDATA[
+        import mx.collections.ArrayCollection;
+        import mx.events.FlexEvent;
+        import mx.rpc.events.FaultEvent;
+
+        [Bindable]
+        private var username:String = "ed";
+
+        [Bindable]
+        private var password:String = "password";
+
+        [Bindable]
+        private var userTasks:ArrayCollection;
+
+        private function login():void {
+            workspaceAdapter.addEventListener("loginSuccessful", loginSuccessful);
+            workspaceAdapter.addEventListener("loginFailed", loginFailed);
+            workspaceAdapter.login(username, password);
+        }
+
+        private function logout():void {
+            workspaceAdapter.logout();
+        }
+
+        private function loginSuccessful(event:Event):void {
+            trace("loginSuccessful");
+
+            workspaceAdapter.getTasks();
+        }
+
+        private function loginFailed(event:FaultEvent):void {
+            trace("loginFailed");
+        }
+
+
+        protected function onKeyUp(event:KeyboardEvent):void {
+            if (event.keyCode == Keyboard.ENTER) {
+                login();
+            }
+        }
+
+        protected function onGetTasksClick(event:MouseEvent):void {
+            workspaceAdapter.getTasks();
+        }
+        ]]>
+		</fx:Script>
+    <fx:Declarations>
+        <workspace:WorkspaceAdapter
+                id="workspaceAdapter"
+                lcServerUrl="{'http://87.106.248.40:8080'}"/>
+    </fx:Declarations>
+    <s:VGroup>
+        <s:Label text="Login:"/>
+        <s:TextInput text="@{username}"/>
+        <s:TextInput text="@{password}" keyUp="onKeyUp(event)"/>
+        <s:Button label="go" click="login()"/>
+        <s:Button label="logout" click="logout()"/>
+        <s:Button label="get tasks" click="onGetTasksClick(event)"/>
+        <mx:DataGrid dataProvider="{workspaceAdapter.tasks}"/>
+    </s:VGroup>
+</s:Group>
