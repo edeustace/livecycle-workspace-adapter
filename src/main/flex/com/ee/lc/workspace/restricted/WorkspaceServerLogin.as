@@ -1,6 +1,7 @@
 package com.ee.lc.workspace.restricted
 {
-	import com.ee.lc.workspace.restricted.utils.findKeyValue;
+import com.ee.lc.workspace.WorkspaceAdapter;
+import com.ee.lc.workspace.restricted.utils.findKeyValue;
 	
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
@@ -36,16 +37,16 @@ package com.ee.lc.workspace.restricted
 				{
 					oid = findKeyValue("oid", event.result as String );
 					userId = findKeyValue("userid", event.result as String);
-					dispatchEvent( new Event("loginSuccessful") );
+					dispatchEvent( new Event(WorkspaceAdapter.LOGIN_SUCCESSFUL) );
 				}
 				else
 				{
-					dispatchEvent( new Event("loginFailed") );
+					dispatchEvent( new Event(WorkspaceAdapter.LOGIN_FAILED) );
 				}
 			});
 			
 			service.addEventListener(FaultEvent.FAULT, function(event:FaultEvent):void{
-				dispatchEvent( new Event("loginFailed") );
+				dispatchEvent( new Event(WorkspaceAdapter.LOGIN_FAILED) );
 			});
 			service.send({assertionId: assertionID, renewAssertion:false, serverUrl: rootUrl + CONTEXT});
 		}
