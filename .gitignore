@@ -3,3 +3,9 @@ fds_rb.swc
 .idea/
 *.iml
 target
+.actionScriptProperties
+.flexConfig.xml
+.flexLibProperties
+.flexProperties
+.project
+.settings/
